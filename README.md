@@ -9,6 +9,9 @@ Open run.js with notepad and at the very bottom add your Bot's Token.
 Open Start.bat and you should be good to go!
 
 # Usage:
+Type "~help" if you forget how to create commands.
+Type "~commands" for a list of commands you have made.
+
 Creating commands is almost exactly like BooBot.
 ~createcommand ~NameOfCommand | Whatever you want
 
