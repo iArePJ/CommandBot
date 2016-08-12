@@ -1,15 +1,15 @@
 # CommandBot
 Discord Bot that lets users create their own custom commands
 
-CommandBot runs on Node.js so make sure you have that installed.
+CommandBot runs on Node.js so make sure you have that installed.  
 https://nodejs.org/en/
 
 # Running CommandBot:
-Open run.js with notepad and at the very bottom add your Bot's Token.
+Open run.js with notepad and at the very bottom add your Bot's Token.  
 Open Start.bat and you should be good to go!
 
 # Usage:
-Type "~help" if you forget how to create commands.
+Type "~help" if you forget how to create commands.  
 Type "~commands" for a list of commands you have made.
 
 Creating commands is almost exactly like BooBot.
