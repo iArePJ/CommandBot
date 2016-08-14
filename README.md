@@ -24,11 +24,10 @@ User enters:
 Bot sends a message saying:  
 pong
 
-You can have multiple random responses by adding:  
-$random{}
+You can have multiple random responses by adding semi-colons to seperate them. You don't need a semi-colon for the last one.
 
 Example:  
-~createcommand ~greeting | $random{Hey;Hello;What's up}
+~createcommand ~greeting | Hey;Hello;What's Up;Howdy
 
 This will make it output Hey, Hello, or What's up randomly.  
 The responses must be inside the brackets and must be seperated by semi-colons. No semi-colon is needed for the last response.
