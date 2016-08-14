@@ -1,5 +1,5 @@
 # CommandBot
-Discord Bot that lets users create their own custom commands.
+Discord Bot that lets users create their own custom commands
 
 CommandBot runs on Node.js so make sure you have that installed.  
 https://nodejs.org/en/
@@ -24,18 +24,10 @@ User enters:
 Bot sends a message saying:  
 pong
 
-<<<<<<< HEAD
-You can have multiple random responses by adding semi-colons to seperate them. You don't need a semi-colon for the last one.
-=======
-You can have the output be a image link.
-
-You can have multiple random responses by adding:  
-$random{}
->>>>>>> origin/master
+You can have multiple random responses by adding a semi-colon to seperate them. You don't need a semi-colon for the last one.
 
 Example:  
-~createcommand ~greeting | Hey;Hello;What's Up;Howdy
+~createcommand ~greeting | Hey;Hello;What's up;Howdy
 
 This will make it output Hey, Hello, or What's up randomly.  
 The responses must be inside the brackets and must be seperated by semi-colons. No semi-colon is needed for the last response.
-
