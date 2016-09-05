@@ -54,9 +54,14 @@ bot.on("message", function(message)
 					}
 				var command = "./commands/" + com[i] + ".txt";
 				fs.readFile(command,'utf8', function(err,f){
-				var com2 = f.toString().split(";");
-				var num = Math.random() * ((com2.length - 1) - 0) + 0;
-				bot.sendMessage(message, com2[Math.floor(num)]);
+				try{
+					var com2 = f.toString().split(";");
+					var num = Math.random() * ((com2.length - 1) - 0) + 0;
+					bot.sendMessage(message, com2[Math.floor(num)]);
+				}
+				catch(err) {
+					console.error("",err);
+				}
 				});
 			}
 		}
