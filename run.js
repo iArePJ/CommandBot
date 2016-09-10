@@ -1,13 +1,16 @@
-// Make sure you add your bot token at the bottom of the code.
-
-// Bot Requirements
-var Discord = require("discord.js");
-var bot = new Discord.Client();
+const Discord = require('discord.js');
+const bot = new Discord.Client();
 var fs = require("fs");
+var oldAuthor;
 
-// Bot continuously reads messages
-bot.on("message", function(message)
-{
+// ADD YOUR BOT'S TOKEN HERE
+const token = "YOUR_BOTS_TOKEN";
+
+bot.on('ready', () => {
+  
+});
+
+bot.on('message', message => {
 	// Makes sure the first word is ~createcommand
 	var checkMessage = message.content.split(" ");
 	if(checkMessage[0] == "~createcommand")
@@ -21,9 +24,9 @@ bot.on("message", function(message)
 		if(commandName[1].charAt(0) == "~")
 			{
 				checkExistingCommand(commandText,commandName);
-				bot.sendMessage(message, "Command " + commandName[1] + " has been created");
+				message.channel.sendMessage("Command " + commandName[1] + " has been created");
 			} else {
-				bot.sendMessage(message, "Command must contain '~'");
+				message.channel.sendMessage("Command must contain '~'");
 			}
 	}
 
@@ -44,12 +47,12 @@ bot.on("message", function(message)
 			{
 				if(com[i] == "~commands")
 					{
-						bot.sendMessage(message,com);
+						message.channel.sendMessage(com);
 						break;
 					}
 				if(com[i] == "~help")
 					{
-						bot.sendMessage(message,"How to create commands:\n~createcommand ~NameOfCommand | Type whatever you want here");
+						message.channel.sendMessage("How to create commands:\n~createcommand ~NameOfCommand | Type whatever you want here");
 						break;
 					}
 				var command = "./commands/" + com[i] + ".txt";
@@ -57,7 +60,7 @@ bot.on("message", function(message)
 				try{
 					var com2 = f.toString().split(";");
 					var num = Math.random() * ((com2.length - 1) - 0) + 0;
-					bot.sendMessage(message, com2[Math.floor(num)]);
+					message.channel.sendMessage(com2[Math.floor(num)]);
 				}
 				catch(err) {
 					console.error("",err);
@@ -66,10 +69,9 @@ bot.on("message", function(message)
 			}
 		}
 	});
+  
 });
 
-
-// If the command already exists then it won't add it to commands.txt
 function checkExistingCommand(commandText,commandName)
 {
 	var com = commandName[1];
@@ -121,4 +123,4 @@ function createCommand(desc,b,com)
 	return;
 }
 
-bot.loginWithToken("YOUR BOT TOKEN");
+bot.login(token);
