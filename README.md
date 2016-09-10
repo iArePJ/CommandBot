@@ -1,7 +1,7 @@
 # CommandBot
 Discord Bot that lets users create their own custom commands
 
-CommandBot runs on Node.js so make sure you have that installed.  
+CommandBot runs on Node.js 6.0+ so make sure you have that installed.  
 https://nodejs.org/en/
 
 # Running CommandBot:
