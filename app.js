@@ -55,7 +55,6 @@ client.on('message', message => {
     }
 
     fs.readFile('./commands/commands.txt', 'utf8', function (err, f) {
-        console.log(f.toString().split(';'));
         let com = f.toString().split(";");
         for (i = 0; i < com.length; i++) {
             if (message.content === com[i]) {
