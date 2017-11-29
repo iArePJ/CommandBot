@@ -1,6 +1,6 @@
 {
   "name": "CommandBot",
-  "version": "2.1.1",
+  "version": "2.1.2",
   "description": "Discord bot that lets users create their own commands.",
   "main": "app.js",
   "scripts": {
