@@ -7,7 +7,7 @@ const random = require("random-js")(); // uses the nativeMath engine
 const client = new Discord.Client();
 
 // The token of your bot - https://discordapp.com/developers/applications/me
-const token = 'YOUR BOT TOKEN HERE';
+const token = 'BOT TOKEN GOES HERE';
 
 // The ready event is vital, it means that your bot will only start reacting to information
 // from Discord _after_ ready is emitted
@@ -29,6 +29,10 @@ client.on('message', message => {
                 return null;
             }
             let commandText = message.content.split('|', 2);
+            if (commandText[1] === undefined) {
+                message.channel.send("You forgot to use '|'");
+                return null;
+            }
             if (commandName.charAt(0) === '~') {
                 checkExistingCommand(commandText[1], commandName);
             } else {
