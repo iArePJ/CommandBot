@@ -13,6 +13,15 @@ const token = 'BOT TOKEN GOES HERE';
 // from Discord _after_ ready is emitted
 client.on('ready', () => {
     console.log('I am ready!');
+    // Remove new lines when starting the bot.
+    fs.readFile('./commands/commands.txt', 'utf8', function (err, f) {
+        f = f.replace(/(\r\n|\n|\r)/gm, "");
+        fs.writeFile('./commands/commands.txt', f, "", function (err) {
+            if (err) {
+                console.log(err);
+            }
+        });
+    });
 });
 
 // Create an event listener for messages
@@ -46,6 +55,7 @@ client.on('message', message => {
     }
 
     fs.readFile('./commands/commands.txt', 'utf8', function (err, f) {
+        console.log(f.toString().split(';'));
         let com = f.toString().split(";");
         for (i = 0; i < com.length; i++) {
             if (message.content === com[i]) {
@@ -116,7 +126,7 @@ function createCommand(commandText, commandExists, commandName) {
             if (err) throw err;
         });
 
-        fs.writeFile(fileName, commandText, function (err) {
+        fs.writeFile(fileName, commandText.trim(), function (err) {
             if (err) {
                 return console.error(err);
             }
