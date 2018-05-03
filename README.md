@@ -5,7 +5,7 @@ CommandBot runs on Node.js 6.0+ so make sure you have that installed.
 https://nodejs.org/en/
 
 # Running CommandBot:
-Open run.js with notepad and add your Bot's Token.
+Open app.js with notepad and add your Bot's Token.
 Open Start.bat and you should be good to go!
 
 # Usage:
