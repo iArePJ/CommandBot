@@ -16,8 +16,9 @@ class RESTManager {
   }
 
   destroy() {
-    for (const handlerID in this.handlers) {
-      this.handlers[handlerID].destroy();
+    for (const handlerKey of Object.keys(this.handlers)) {
+      const handler = this.handlers[handlerKey];
+      if (handler.destroy) handler.destroy();
     }
   }
 
